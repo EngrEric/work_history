@@ -20,7 +20,7 @@
 // string
 
 function convertToString(n){
-  return n = n.toString();
+  return n.toString();
 }
 
 
@@ -28,14 +28,14 @@ function convertToString(n){
 // number subtracted by 1
 function numSubt(x){
   x = Number(x);
-  return x -= 1;
+  return --x;
 }
 
 // 3. write a function that takes a number as a parameter and returns that
 // number added by 1
 function numAdd(x){
   x = Number(x);
-  return x += 1;
+  return ++x;
 }
 
 // 4. write a function that takes two number as its parameters and returns then
@@ -65,8 +65,8 @@ function isOdd(num){
 // 7. write a function that takes two strings as its parameters and returns the
 // combination of those two strings
 function twoString(one,two){
-  one = one.toString(); two = two.toString();
-  return three = one.concat(two);
+  one.toString(); two.toString();
+return one.concat(two);
 }
 // function twoString(one,two){
 //   one = one.toString(); two = two.toString();

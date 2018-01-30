@@ -1,5 +1,6 @@
-const getUserChoice = (userInput)  => {
- userInput=userInput.toLowerCase; 
+const getUserChoice = (event)  => {
+  let userInput=event;
+ console.log(userInput.toLowerCase());
   if(userInput==='rock'|| userInput==='paper'||userInput==='scissors'){
    return userInput; 
   }else{console.log("please input a valid user");}    
@@ -49,7 +50,7 @@ const determineWinner = (userChoice, computerChoice) => {
 };
 
 const playGame = () => {
- const userChoice= getUserChoice('rock');
+ const userChoice= getUserChoice('paper');
   const computerChoice = getComputerChoice();
   console.log("you threw:"+userChoice);
   console.log("the computer threw:"+computerChoice);
