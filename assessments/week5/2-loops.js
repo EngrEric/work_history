@@ -30,11 +30,11 @@ const LoopThatLogsEveryItemOfArray = function(week){
 const ArrayIndexIsOdd= function(week){
   week = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
   for(let initialValue=0; initialValue<week.length; initialValue++){
-  let  indexOfEachWeek = week[initialValue].length%2;
-if (indexOfEachWeek===1) {
-  console.log(week[initialValue]);
+    let  indexOfEachWeek = week[initialValue].length%2;
+    if (indexOfEachWeek===1) {
+        console.log(week[initialValue]);
             }
-        }
+      }
 }
 ArrayIndexIsOdd();
 
@@ -45,11 +45,11 @@ ArrayIndexIsOdd();
 const ArrayIndexIsEven = function(week){
   week = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
   for(let initialValue=0; initialValue<week.length; initialValue++){
-  let  indexOfEachWeek = week[initialValue].length%2;
-if (indexOfEachWeek===0) {
-  console.log(week[initialValue]);
+    let  indexOfEachWeek = week[initialValue].length%2;
+    if (indexOfEachWeek===0) {
+        console.log(week[initialValue]);
             }
-        }
+      }
 }
 ArrayIndexIsEven();
 
@@ -58,26 +58,20 @@ ArrayIndexIsEven();
 // 4. write a function that takes an array as its first parameter and a searchValue as
 // its second parameter. The function returns true if the searchValue is in the array
 // and false if it is not
-const schoolCourses = function(arr,searchValue) {
-return arr.includes(searchValue);
+const isSearchValueInArray = function(arr,searchValue) {
+  return arr.includes(searchValue);
 }
-schoolCourses(['systemDevelopment','RadarSystem','ProjectManagement'],'ProjectManagement');//returns true
-schoolCourses(['systemDevelopment','RadarSystem','ProjectManagement'],'architecture');//returns false
+
 
 
 // 5. write a function that takes an array as its first parameter, and a replaceValue as
 // its second parameter. The function returns a new array where all the values in the
 // array have been overwritten by the replaceValue.
 
-const overWriteArray=function(arr,replaceValue) { arr =['systemDevelopment','RadarSystem','ProjectManagement'];
-  replaceValue = function(element){
-  newValue = 'ProjectManagement';
-  element=newValue;
-    return element;
-  }
-return arr.map(replaceValue);
-}
-overWriteArray();
+const overWriteArray = function(arr, replaceValue) {
+			return arr.map(function(){ return replaceValue; });
+		}
+
 
 
 // 6. write a function that takes an array as its first parameter, a searchValue as
@@ -86,7 +80,7 @@ overWriteArray();
 
 
 function searchAndReplace (array, searchValue, replaceValue) {
-result = [];
+let result = [];
 for(let i=0; i<array.length; i++){
   if(array[i]===searchValue){
     result.push(replaceValue);
@@ -94,8 +88,3 @@ for(let i=0; i<array.length; i++){
 }
 return result;
 }
-
-
-/*function searchAndReplace (array, searchValue, replaceValue) {
-  return array.map(currentWord => currentWord == searchValue ? replaceValue : currentWord)
-}*/
