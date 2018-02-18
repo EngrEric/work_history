@@ -3,13 +3,76 @@ concepts from Section 3 of the video lectures. Answer them in YOUR OWN WORDS.
 Fill free to provide examples to help illustrate your train of thought.
 
 1. Javascript is a dynamically typed language. What does this mean?
+It means that you do not need to declare variable type(and in most cases
+variable itself) before use. That is, a variable will get its
+type after it has been assigned with a value for the first time when the js runs.
+This implies that js has the ability to adjust(the dynamic nature) unlike other
+languages like java where a data type must be declared before use.
+
+
 
 2. What is a primitive type? Explain each primitive type.
+Primitive type is a type of data that represents a single value. That is, its
+not an object which represents different data types or methods.
+
+  There are five primitive types in js and a new one called 'symbol'
+  a. undefined: This is a data type which represents/tells that a data does
+     not exits but there is a location/position for that data in the memory.
+     This is automatically assigned by the js engine and this makes it
+     defer from null.
+  b. null:  This type of primitive type involves assigning a null to a variable
+     as its value, thereby making that variable to have no value intentionally.
+  c. Boolean: This one sets a variable to have one of the two values
+     (true or false), therefore no variable can be true and false.
+  d. Number:  This is the numeric primitive type. It includes both the floating
+     numbers(both long and short), integer, etc
+  e. String: Characters in group or isolated closed in quotation
+     (double or single) is a string.
+  f. Symbol: This is a new primitive type that comes with ES6. From research,
+     a symbol is a unique and immutable/changeable data type and may be used
+     as an identifier for object properties.
+
 
 3. What are operators and operands?
+Operators are built in functions that manipulates the operands(especially two)
+given to it and yield one value as result. those parameters operators take to
+return a result is the operands.
+
+example1 a+b
+Here 'a' and 'b' is an operand while '+' is the operator.
+e.g2
+let test = a+b;
+Here 'a,b & test' are operands of the operators '+' and '='
+
+
 
 4. In what order does operators get called?
+Operators are called by precedence. The operators precedence is not
+defined by the programmer, it is a built-in function in js. The operator with
+higher precedence is the first to take effect.
+
+
 
 5. What does it mean when a value is coerced?
+This is converting a data from its data type to another data type.
+e.g let x = '2' + 4;
+    console.log(x); // output is 24.
+    javascript coerced the string '2' to 2 and concatenated it
+    with the number 4 using the addition operator.
+
+
 
 6. What is the difference between '==' and '==='?
+Both are used for comparison(decision making) but the difference is that
+== compares two values not strictly(i.e the two value it compares may not
+be of the same data type and js will apply coercion on them).
+Example1 let a = (9=='9');
+        console.log(a);// true
+it return true because the == is not strict by knowing that one is a string
+and the other a number.
+while, === compares the two values strictly, they must be the same both
+in data type and value before it returns true.
+Example2 let a = (9==='9');
+        console.log(a);// false
+ let b = (9===9);
+        console.log(b);// true

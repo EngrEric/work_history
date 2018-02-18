@@ -3,32 +3,157 @@ concepts from Section 4 of the video lectures. Answer them in YOUR OWN WORDS.
 Fill free to provide examples to help illustrate your train of thought.
 
 1. What are the ways to access methods or properties on an object?
+  a. Computed member access i.e the bracket "[]"
+  b. member access i.e the dot operator "."
+Example of using both to access a property in eric object
+ i using dot to log a property value:  console.log(eric.property_name);
+ ii using [] to log a property value: console.log(eric[property_name]);
+
+
+
 
 2. How do you initialize an Object literal?
+To initialize object literal we use
+const object_name = {
+      property1: value,
+      property2: value,
+      property_n: value_n
+}
+
+
+
 
 3. What is a Namespace? How does Javascript handle Namespacing?
 
+In simple term, Namespace keeps variables and functions, it also
+separates them if their name are same.
+Javascript handles namespace by faking it using object.
+
+Example: we can check if this variable name "eric" has been used by someone else
+in the lib we are about to use and if yes, we use object to fake it.
+let greet = "Hello" // we created this one
+let greet = "Hola" // lets assume this is in the library
+console.log(greet)// output=Hola, this overides our Hello
+//To correct this, we create faking namespace using object.
+let greet = greet || {};// this checks if greet exists, if no, create an object greet.
+                        //if yes,
+const spanish = {};
+const english = {};
+english.greet ="Hello";
+spanish.greet = "Hola";
+//we have eliminated the collision of that namespace
+console.log(spanish)//this logs hola
+console.log(english)//this logs hello
+
+
+
+
 4. What is a JSON? What are some of the Javascript functions used to parse and encode JSON?
+JSON means Javascript Object Notation, it is string of data that looks like
+object literal.
+  a. JSON.parse(object_name or the Object itself); // converts JSON to javascript
+Object literal
+  b. JSON.stringify(object_name or Object itself); //converts javascript object
+   literal to JSON
+
+
 
 5. What are first class functions?
+They are functions that you create on the fly as literal syntax, assign them to variables,
+pass them around as parameters of another function, and can be used like
+other primitive types.
 
-6. Explain the difference between a function statement and expression.
+
+
+
+6. Explain the difference between  a function statement and expression.
+function statements does not result in a value,
+it is just place in the memory but does not return a value unless its executed
+and it can be hoisted because it is already available in memory while
+function expression returns a value/result and cannot be hoisted, its actually
+a function object assigned to a variable.
+Example of function statement
+function Age(){
+console.log("100 years")
+}
+
+Example of function expression
+let Age = function(){
+console.log("100 years")
+}
+
+
+
 
 7. What does it mean to be passed by value? What types are passed by value?
+To be passed by value simply means creating a copy of that value passed and another
+spot is also created in memory where that new variable created points.
+Primitive types are passed by value.
+
+
 
 8. What does it mean to be passed by reference? What types are passed by reference?
+To pass by reference is assigning an object variable to another variable,
+but here, no copy of that object is created nor new memory location created,
+rather both variables points to the same object memory location.
+Objects and Functions are passed by reference.
+
+
 
 9. What is the `this` variable?
+`this` is a variable that points to the global object or the user defined
+object it is created in.
+
+
+
 
 10. What is an array? How are they different in Javascript than in other languages?
+Arrays are collection of data.
+Arrays in javascript differ from arrays in other languages because it can
+ accommodate functions, objects, primitive types, and anything in javascript.
+
+
+
 
 11. What are function arguments? What is the keyword that Javascript gives you to
 access a function's arguments?
+Arguments contains a list of all the values and parameters passed to a function
+when ever it is called. They are parameters passed to a function during
+execution.
+The keyword is `arguments` which contains a list of all the values for the
+parameters passed.
+
+
 
 12. What is an IIFE? How can they be useful?
+IIFE is an acronym of Immediately Invoked Function Expression
+They are useful because of the fact that they let us run the function
+Immediately after creation, Making function creation and execution simpler.
+ Example:
+ let person = function#(firstName,lasName){
+ return `${firstName}' '${lastName}`;
+ }('Okemmadu','Eric');
+
+
+
 
 13. Explain closures. How can you use them to your advantage in Javascript?
+closures are important tools in javascript, it is the combination of a function and
+the lexical environment within which that function was declared.
+closures helps to return the value of a function inside a function very easily
+closures has the feature to make a function run the way it supposed to.
+
+
+
 
 14. What is a callback function?
+Callback is giving a function, say "Y" to another function, say "X" and having my function"Y"
+executed after the function "X" finished execution.
+
+
+
 
 15. What does call(), apply() and bind() help you control?
+They help you control the object which `this` keyword points to.
+Apply and Call are nearly identical and are frequently used in JavaScript
+for borrowing methods and for setting the `this` value explicitly.

@@ -3,23 +3,91 @@ concepts from Section 2 of the video lectures. Answer them in YOUR OWN WORDS.
 Fill free to provide examples to help illustrate your train of thought.
 
 1. What is a syntax parser?
+Syntax parser is an intermediate program that reads and converts the javascript
+text to what computer understands, by producing a data structure which tells the
+structure of the program written. Therefore, syntax parser tells if a javascript
+code/syntax is correct or  not.
+
 
 2. What is a lexical environment?
+The location or path where a code is found physically in a written program
+determines how it is executed and that defines its lexical environment.
+example:
+let person = {
+        name: "Eric",
+        gender: "m"
+}
+from the code above, name and gender property sits lexically
+inside the person object.
+lexical environment is where a code is written and what surrounds it.
+
 
 3. What is the execution context?
+In a program or code snippet, which code to execute first and in what order
+is managed by execution context. it simply encapsulates to help order or manage
+the running code.
+
 
 4. What are name/value pairs?
+Name/value pairs in a given context is assigning a value or more name/values
+pairs to a particular name.
+
+
 
 5. What is an Object?
+An object entails having many name value pairs held by one unique name.
+example:
+my dog is an object because it has properties/attributes and behaviors(methods)
+its properties incudes its long tongue, two eyes, etc.
+behaviors includes its ability to bark, run, etc
+any variable name that will hold my dog, its properties and methods,
+is an object.
+
 
 6. What does it mean that something is "Global"?
+something is global if it can be accessed in any part of the program.
+
 
 7. Explain how hoisting works in Javascript.
+Hoisting is the ability of the javascript to execute a function while the
+function call is at top but the function statement(not function expression)
+itself is below.
+example:
+test(); //hoisting
+function test(){
+let b="hello word"
+console.log(b);
+}
+
 
 8. What does undefined mean?
+undefined means that a location has been mapped for a variable in the memory,
+but its type and value has not been determined/known. Hence, one can say that
+undefined is the value js assigns to variable that is declared but has no
+data type or value.
+
+
 
 9. Explain the concept of Scope?
+Scope is the area/domain which the life span of a variable only exist.
+A variable can be defined in either local or global scope, which establishes
+the variables’ accessibility from different scopes during runtime. Any defined
+global variable, meaning any variable declared outside of a function body will
+live throughout runtime and can be accessed and altered in any scope.
+ES6 introduced the let and const keywords that support the declaration of block
+scope local variables. This means the variable will be confined to the scope of
+a block that it is defined in, such as an if statement or for loop and will not
+be accessible outside of the opening and closing curly braces of the block.
+This is contrary to var declarations which are accessible outside blocks they
+are defined in.
+
+
 
 10. Javascript is single threaded. What does this mean?
+This means that javascript does one command/code execution at a time, which
+ entails that it won't run parallel code execution.
 
 11. What is the difference between synchronous and asynchronous?
+synchronous  is the execution of codes line by line while asynchronous is the
+multiple line execution of codes. javascript is said to be synchronous because
+it executes one line of a codes at a time.
