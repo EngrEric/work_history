@@ -35,13 +35,7 @@ pairs to a particular name.
 
 
 5. What is an Object?
-An object entails having many name value pairs held by one unique name.
-example:
-my dog is an object because it has properties/attributes and behaviors(methods)
-its properties incudes its long tongue, two eyes, etc.
-behaviors includes its ability to bark, run, etc
-any variable name that will hold my dog, its properties and methods,
-is an object.
+This a collection of name/value pairs.
 
 
 6. What does it mean that something is "Global"?
@@ -49,9 +43,9 @@ something is global if it can be accessed in any part of the program.
 
 
 7. Explain how hoisting works in Javascript.
-Hoisting is the ability of the javascript to execute a function while the
-function call is at top but the function statement(not function expression)
-itself is below.
+During the compile phase, variables and function declarations are put into
+memory so that during the execution phase they are available to be accessed.
+These variables and declarations are said to be "hosited" to the top of code.
 example:
 test(); //hoisting
 function test(){
@@ -69,7 +63,7 @@ data type or value.
 
 
 9. Explain the concept of Scope?
-Scope is the area/domain which the life span of a variable only exist.
+Scope is the current execution context in which values and experssions can be referenced.
 A variable can be defined in either local or global scope, which establishes
 the variables’ accessibility from different scopes during runtime. Any defined
 global variable, meaning any variable declared outside of a function body will
@@ -88,6 +82,4 @@ This means that javascript does one command/code execution at a time, which
  entails that it won't run parallel code execution.
 
 11. What is the difference between synchronous and asynchronous?
-synchronous  is the execution of codes line by line while asynchronous is the
-multiple line execution of codes. javascript is said to be synchronous because
-it executes one line of a codes at a time.
+Javascript is single threaded but can perform asynchronous commands.

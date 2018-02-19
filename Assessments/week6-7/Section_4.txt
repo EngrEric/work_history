@@ -13,12 +13,7 @@ Example of using both to access a property in eric object
 
 
 2. How do you initialize an Object literal?
-To initialize object literal we use
-const object_name = {
-      property1: value,
-      property2: value,
-      property_n: value_n
-}
+To initialize object literal we use {}
 
 
 
@@ -29,22 +24,21 @@ In simple term, Namespace keeps variables and functions, it also
 separates them if their name are same.
 Javascript handles namespace by faking it using object.
 
-Example: we can check if this variable name "eric" has been used by someone else
+Example: we can check if this variable name "greet" has been used by someone else
 in the lib we are about to use and if yes, we use object to fake it.
-let greet = "Hello" // we created this one
-let greet = "Hola" // lets assume this is in the library
-console.log(greet)// output=Hola, this overides our Hello
+var greet = "Hello" // we created this one
+var greet = "Hola" // lets assume this is in the library
+console.log(greet+' overides our Hello')// output=Hola, this overides our Hello
 //To correct this, we create faking namespace using object.
-let greet = greet || {};// this checks if greet exists, if no, create an object greet.
+var greet = greet || {};// this checks if greet exists, if no, create an object greet.
                         //if yes,
-const spanish = {};
-const english = {};
+var spanish = {};
+var english = {};
 english.greet ="Hello";
 spanish.greet = "Hola";
 //we have eliminated the collision of that namespace
-console.log(spanish)//this logs hola
-console.log(english)//this logs hello
-
+console.log(spanish.greet+ ' corrected')//this logs hola
+console.log(english.greet+ ' corrected')//this logs hello
 
 
 
@@ -130,9 +124,9 @@ IIFE is an acronym of Immediately Invoked Function Expression
 They are useful because of the fact that they let us run the function
 Immediately after creation, Making function creation and execution simpler.
  Example:
- let person = function#(firstName,lasName){
+ (function#(firstName,lasName){
  return `${firstName}' '${lastName}`;
- }('Okemmadu','Eric');
+ })('Okemmadu','Eric');
 
 
 

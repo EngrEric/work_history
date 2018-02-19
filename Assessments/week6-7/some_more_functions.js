@@ -49,7 +49,7 @@ console.log(countNumberOfVowels("I am loving this programing gradually"));
   function lowersTheCaseOf1stThreeLetters(myString) {
   if(myString.length>3){
    let theThreeLetters = myString.substring(0,3);
-   return theThreeLetters.toLowerCase()+myString.substring(3).toUpperCase();
+   return theThreeLetters.toLowerCase()+myString.substring(3);
       }
   if(myString.length<3){
     return  myString.toUpperCase()
@@ -67,13 +67,14 @@ console.log(countNumberOfVowels("I am loving this programing gradually"));
   // sample input: "Hello World"
   // sample output: null
   function isEvenReturnHalfStringElseNull(mystring){
-      if(mystring.length%2===0){
-          let halfString = mystring.length/2
+    let stringLength = mystring.length;
+      if(stringLength%2===0){
+          let halfString = stringLength /2
           return mystring.substring(0, halfString);
       }
-      else{
+
           return null;
-           }
+
   }
 
 
@@ -83,9 +84,7 @@ console.log(countNumberOfVowels("I am loving this programing gradually"));
   // sample input: [1, 7, 1, 4, 1, 6, 4, 5]
   // sample output: 29
   function sumOfArrayNumber(arrNum){
-      function adder(accumalator, currentValue){
-          return accumalator+currentValue;
-      }
+    let adder=(accumalator, currentValue)=> accumalator+currentValue;
   return arrNum.reduce(adder);
   }
 
@@ -95,3 +94,33 @@ console.log(countNumberOfVowels("I am loving this programing gradually"));
 // EX:
   // sample input: [1, 7, 1, 4, 1, 6, 4, 5]
   // sample output: 1
+
+  function findMostFrequentItem(array) {
+  const FREQUENCY_COUNT_STORE = {};
+
+  array.forEach(item => {
+    if (FREQUENCY_COUNT_STORE[item]) {
+      FREQUENCY_COUNT_STORE[item]++;
+    } else {
+      FREQUENCY_COUNT_STORE[item] = 1;
+    }
+  })
+
+  let maxFrequencyCount = 0;
+  let mostFrequentItem = null;
+
+  Object
+    .entries(FREQUENCY_COUNT_STORE)
+    .forEach(entry => {
+      let item = entry[0];
+      let count = entry[1];
+
+      if (maxFrequencyCount < count) {
+        maxFrequencyCount = count;
+        mostFrequentItem = item;
+      }
+
+    })
+
+    return mostFrequentItem;
+}

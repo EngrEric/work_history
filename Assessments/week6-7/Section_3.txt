@@ -57,8 +57,8 @@ higher precedence is the first to take effect.
 This is converting a data from its data type to another data type.
 e.g let x = '2' + 4;
     console.log(x); // output is 24.
-    javascript coerced the string '2' to 2 and concatenated it
-    with the number 4 using the addition operator.
+    javascript coerced the Number 4 to string  '4' and concatenated it
+    with the string '2' using the addition operator.
 
 
 
